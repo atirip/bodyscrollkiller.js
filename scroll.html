@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			border: 0;
+			position: relative;
+			border: 0;
+		}
+
+		#scroll {
+			display: block;
+			width: 601px;
+			height: 3000px;
+			margin: 0 auto;
+			cursor: pointer;
+		}
+
+		.bg {
+			width: 100%;
+			height: 100%;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#0000FF));
+			background-image: -webkit-linear-gradient(top, #FF0000, #0000FF);
+			background-image:    -moz-linear-gradient(top, #FF0000, #0000FF);
+			background-image:      -o-linear-gradient(top, #FF0000, #0000FF);
+			background-image:         linear-gradient(to bottom, #FF0000, #0000FF);
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FF0000, endColorstr=#0000FF);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FF0000, endColorstr=#0000FF)";
+		}
+	</style>
+</head>
+<body>
+	<div id=scroll>
+		<!-- IE8 fails to register clicks on filter, that's why -->
+		<div class=bg></div>
+	</div>
+
+	<script src=bodyscrollkiller-min.js></script>
+	<script>
+
+		atirip.bind = function(type, handler, element) {
+			element = element || document.documentElement
+			if ( element.addEventListener ) {
+				element.addEventListener( type, handler, false)
+			} else {
+				if( element.attachEvent ) {
+					element.attachEvent('on' + type, handler);
+				}
+			}
+		}
+
+		atirip.bind('click', function() {
+				atirip.bodyScroll() ? atirip.bodyScrollOff( document.getElementById('scroll') ) : atirip.bodyScrollOn()
+			},
+			document.getElementById('scroll')
+		)
+	</script>
+</body>
+</html>
