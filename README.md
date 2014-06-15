@@ -47,7 +47,7 @@ where wrapper is vanilla DOM Node of your wrapper tag, if you use jQuery, then i
 
 ## Demo
 
-Simple demo [https://raw.github.com/atirip/bodyscrollkiller.js/master/scroll.html](https://raw.github.com/atirip/bodyscrollkiller.js/master/scroll.html)  
+Simple demo [http://atirip.github.io/bodyscrollkiller.js/scroll.html](http://atirip.github.io/bodyscrollkiller.js/scroll.html)  
 Click once to turn scrolling off, click again to turn it back on.
 
 ## Compatible
